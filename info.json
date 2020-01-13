@@ -1,0 +1,14 @@
+{
+    "name": "DeadlockStackingForNecromant",
+    "version": "0.0.1",
+    "title": "Deadlock Stacking for Necromant",
+    "author": "billbo99",
+    "contact": "",
+    "homepage": "https://github.com/billbo99/DeadlockStackingForNecromant",
+    "factorio_version": "0.17",
+    "dependencies": [
+        "base >= 0.17",
+        "necromant"
+    ],
+    "description": "Stacking for Necromant"
+}
