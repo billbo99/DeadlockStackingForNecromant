@@ -24,7 +24,9 @@ Items.items = {
     ["necro-small-worm-corpse"] = {tech = "necro-tech-process-start", icon = "stacked-worm_corpse_small.png"},
     ["necro-medium-worm-corpse"] = {tech = "necro-tech-process-medium-worm-corpse", recipes = {"StackedRecipe-necro-process-medium-worm-corpse"}, icon = "stacked-worm_corpse_medium.png"},
     ["necro-big-worm-corpse"] = {tech = "necro-tech-process-big-worm-corpse", recipes = {"StackedRecipe-necro-process-big-worm-corpse"}, icon = "stacked-worm_corpse_big.png"},
-    ["necro-behemoth-worm-corpse"] = {tech = "necro-tech-process-behemoth-worm-corpse", recipes = {"StackedRecipe-necro-process-behemoth-worm-corpse"}, icon = "stacked-worm_corpse_behemoth.png"}
+    ["necro-behemoth-worm-corpse"] = {tech = "necro-tech-process-behemoth-worm-corpse", recipes = {"StackedRecipe-necro-process-behemoth-worm-corpse"}, icon = "stacked-worm_corpse_behemoth.png"},
+    --
+    ["necro-spawner-corpse"] = {tech = "necro-tech-process-spawner-corpse", recipes = {"StackedRecipe-necro-process-spawner-corpse"}}
 }
 
 return Items

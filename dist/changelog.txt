@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 17-Aug-2020
+  Changes:
+    - Fixes thanks to .. nihilisticpandemonium
+    - Added "spawner-corpse"
+---------------------------------------------------------------------------------------------------
 Version: 0.0.5
 Date: 19-Feb-2020
   Changes:
@@ -24,6 +30,5 @@ Date: 13-Jan-2020
   Features:
     - Compress "Necromant" body parts using deadlock belt boxes
   Changes:
-  Bug fixes:
+  Bugfixes:
   Info:
----------------------------------------------------------------------------------------------------

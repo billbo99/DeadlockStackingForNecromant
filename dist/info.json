@@ -1,16 +1,16 @@
 {
     "name": "DeadlockStackingForNecromant",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "title": "Deadlock Stacking for Necromant",
     "author": "billbo99",
     "contact": "",
     "homepage": "https://github.com/billbo99/DeadlockStackingForNecromant",
-    "factorio_version": "0.18",
+    "factorio_version": "1.0",
     "dependencies": [
-        "base >= 0.18",
+        "base >= 1.0",
         "deadlock-beltboxes-loaders >= 2.2.3",
-        "?necromant",
-        "?necromant-trblz"
+        "rusty-locale",
+        "necromant"
     ],
     "description": "Stacking for Necromant"
 }
