@@ -6,7 +6,7 @@ local rusty_locale = require "__rusty-locale__.locale"
 local rusty_icons = require "__rusty-locale__.icons"
 local rusty_recipes = require "__rusty-locale__.recipes"
 
-local Items = require("migrations.items").items
+local Items = require("items").items
 local default_beltbox = "basic-transport-belt-beltbox"
 local tech_by_product = {}
 
@@ -34,7 +34,7 @@ local function walk_technology()
                     local main_product = rusty_recipes.get_main_product(data.raw.recipe[effect.recipe])
                     if main_product then
                         if not tech_by_product[main_product.name] then
-                            tech_by_product[main_product.name] = {type = main_product.type, tech = {}}
+                            tech_by_product[main_product.name] = { type = main_product.type, tech = {} }
                         end
                         if tech.name == default_beltbox or starts_with(tech.name, "deadlock-stacking-") then
                             -- skipping beltbox technology
@@ -57,7 +57,7 @@ local function walk_recipes()
         local main_product = rusty_recipes.get_main_product(recipe)
         if main_product then
             if not tech_by_product[main_product.name] then
-                tech_by_product[main_product.name] = {type = main_product.type, tech = {}}
+                tech_by_product[main_product.name] = { type = main_product.type, tech = {} }
                 table.insert(tech_by_product[main_product.name].tech, default_beltbox)
             end
         else
@@ -68,14 +68,14 @@ local function walk_recipes()
         if resource.minable then
             if resource.minable.result then
                 if not tech_by_product[resource.minable.result] then
-                    tech_by_product[resource.minable.result] = {type = resource.minable.result.type or "item", tech = {}}
+                    tech_by_product[resource.minable.result] = { type = resource.minable.result.type or "item", tech = {} }
                 end
                 table.insert(tech_by_product[resource.minable.result].tech, default_beltbox)
             elseif resource.minable.results then
                 for _, result in pairs(resource.minable.results) do
                     if result.type == "item" then
                         if not tech_by_product[result.name] then
-                            tech_by_product[result.name] = {type = result.type, tech = {}}
+                            tech_by_product[result.name] = { type = result.type, tech = {} }
                             table.insert(tech_by_product[result.name].tech, default_beltbox)
                         end
                     end
@@ -100,10 +100,10 @@ local function add_item_to_tech(name, tech)
         end
     end
     if not recipes[string.format("deadlock-stacks-stack-%s", name)] then
-        table.insert(data.raw.technology[tech].effects, {type = "unlock-recipe", recipe = string.format("deadlock-stacks-stack-%s", name)})
+        table.insert(data.raw.technology[tech].effects, { type = "unlock-recipe", recipe = string.format("deadlock-stacks-stack-%s", name) })
     end
     if not recipes[string.format("deadlock-stacks-unstack-%s", name)] then
-        table.insert(data.raw.technology[tech].effects, {type = "unlock-recipe", recipe = string.format("deadlock-stacks-unstack-%s", name)})
+        table.insert(data.raw.technology[tech].effects, { type = "unlock-recipe", recipe = string.format("deadlock-stacks-unstack-%s", name) })
     end
 end
 
@@ -122,7 +122,7 @@ local function main()
             techs = dedup_list(tech_by_product[name].tech)
             item_type = tech_by_product[name].type or "item"
         else
-            techs = {item.tech}
+            techs = { item.tech }
         end
 
         if item.type then
